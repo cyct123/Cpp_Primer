@@ -7,14 +7,15 @@ int main(){
     if (std::cin >> cur_item) {
         int count = 1;
         while (std::cin >> item) {
-            if (cur_item == item) {
+            if (item.isbn() == cur_item.isbn()) {
                 count++;
             } else {
-                std::cout << cur_item << " count:" << count << std::endl;
+                std::cout << cur_item.isbn() << " count:" << count << std::endl;
                 cur_item = item;
                 count = 1;
             }
         }
+        std::cout << cur_item.isbn() << " count:" << count << std::endl;
     }
     return 0;
 }
